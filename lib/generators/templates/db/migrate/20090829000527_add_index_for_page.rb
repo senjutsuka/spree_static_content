@@ -1,10 +1,10 @@
-class AddIndexForPage < ActiveRecord::Migration
+class AddIndexForCMSPage < ActiveRecord::Migration
   def self.up
-    add_index(:pages, :slug)
+    add_index(:cms_pages, :slug)
   end
 
   def self.down
-    remove_index(:pages, :slug)
+    remove_index(:cms_pages, :slug)
   end
 end
 

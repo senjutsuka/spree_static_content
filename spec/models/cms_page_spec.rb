@@ -1,8 +1,8 @@
 require File.dirname(__FILE__) + '/../spec_helper'
 
-describe Page do
+describe CMSPage do
   before(:each) do
-    @page = Page.create(
+    @page = CMSPage.create(
     :title => 'test page',
     :slug => 'test-page',
     :body => 'this is a test page'

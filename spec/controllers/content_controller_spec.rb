@@ -3,7 +3,7 @@ require File.dirname(__FILE__) + '/../spec_helper'
 describe ContentController do
   
   before(:each) do
-    @page = mock("page")
+    @page = mock("cms_page")
 
     # Generally, prefer stub! over should_receive in setup.
     @page.stub!(:slug).and_return('/test')

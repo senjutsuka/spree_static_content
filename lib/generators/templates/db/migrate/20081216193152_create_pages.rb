@@ -1,6 +1,6 @@
-class CreatePages < ActiveRecord::Migration
+class CreateCMSPages < ActiveRecord::Migration
   def self.up
-    create_table :pages do |t|
+    create_table :cms_pages do |t|
       t.string :title
       t.text :body
       t.string :slug
@@ -10,6 +10,6 @@ class CreatePages < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :pages
+    drop_table :cms_pages
   end
 end

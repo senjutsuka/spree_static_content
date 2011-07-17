@@ -11,7 +11,7 @@ class StaticContentController < Spree::BaseController
       request.path
     end
 
-    unless @page = Page.visible.find_by_slug(path)
+    unless @page = CMSPage.visible.find_by_slug(path)
       render :file => "#{RAILS_ROOT}/public/404.html", :layout => false, :status => 404
     end
   end

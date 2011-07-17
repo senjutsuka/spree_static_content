@@ -1,4 +1,4 @@
-class Page < ActiveRecord::Base
+class CMSPage < ActiveRecord::Base
   default_scope :order => "position ASC"
 
   validates_presence_of :title
@@ -13,7 +13,7 @@ class Page < ActiveRecord::Base
 
   def initialize(*args)
     super(*args)
-    last_page = Page.last
+    last_page = CMSPage.last
     self.position = last_page ? last_page.position + 1 : 0
   end
 
@@ -25,11 +25,11 @@ private
 
   def update_positions_and_slug
     unless new_record?
-      return unless prev_position = Page.find(self.id).position
+      return unless prev_position = CMSPage.find(self.id).position
       if prev_position > self.position
-        Page.update_all("position = position + 1", ["? <= position AND position < ?", self.position, prev_position])
+        CMSPage.update_all("position = position + 1", ["? <= position AND position < ?", self.position, prev_position])
       elsif prev_position < self.position
-        Page.update_all("position = position - 1", ["? < position AND position <= ?", prev_position,  self.position])
+        CMSPage.update_all("position = position - 1", ["? < position AND position <= ?", prev_position,  self.position])
       end
     end
 

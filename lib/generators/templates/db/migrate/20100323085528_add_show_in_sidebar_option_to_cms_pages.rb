@@ -1,4 +1,4 @@
-class AddShowInSidebarOptionToCMSPages < ActiveRecord::Migration
+class AddShowInSidebarOptionToCmsPages < ActiveRecord::Migration
   def self.up
     add_column :cms_pages, :show_in_sidebar, :boolean, :default=> false, :null=>false
   end

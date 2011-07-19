@@ -1,4 +1,4 @@
-class AddMetaFieldsToCMSPages < ActiveRecord::Migration
+class AddMetaFieldsToCmsPages < ActiveRecord::Migration
   def self.up
     add_column :cms_pages, :meta_keywords, :string
     add_column :cms_pages, :meta_description, :string

@@ -1,4 +1,4 @@
-class ExtendCMSPages < ActiveRecord::Migration
+class ExtendCmsPages < ActiveRecord::Migration
   def self.up
     change_table :cms_pages do |t|
       t.boolean :show_in_header, :default => false, :null => false

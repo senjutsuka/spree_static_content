@@ -1,4 +1,4 @@
-class AddDefaultTrueToVisibleForCMSPage < ActiveRecord::Migration
+class AddDefaultTrueToVisibleForCmsPage < ActiveRecord::Migration
   def self.up
     change_column :cms_pages, :visible, :boolean, :default=> true
   end

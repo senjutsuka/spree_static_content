@@ -1,4 +1,4 @@
-class AddLayoutToCMSPages < ActiveRecord::Migration
+class AddLayoutToCmsPages < ActiveRecord::Migration
   def self.up
     add_column :cms_pages, :layout, :string
   end

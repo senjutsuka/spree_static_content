@@ -1,4 +1,4 @@
-class AddIndexForCMSPage < ActiveRecord::Migration
+class AddIndexForCmsPage < ActiveRecord::Migration
   def self.up
     add_index(:cms_pages, :slug)
   end

@@ -1,4 +1,4 @@
-class AddVisibleToCMSPages < ActiveRecord::Migration
+class AddVisibleToCmsPages < ActiveRecord::Migration
   def self.up
     add_column :cms_pages, :visible, :boolean
     CMSPage.update_all :visible => true 

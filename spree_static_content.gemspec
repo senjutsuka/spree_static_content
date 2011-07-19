@@ -21,14 +21,14 @@ Gem::Specification.new do |s|
      "Rakefile",
      "VERSION",
      "Versionfile",
-     "app/controllers/admin/pages_controller.rb",
+     "app/controllers/admin/cms_pages_controller.rb",
      "app/controllers/spree/base_controller_decorator.rb",
      "app/controllers/static_content_controller.rb",
-     "app/models/page.rb",
-     "app/views/admin/pages/_form.html.erb",
-     "app/views/admin/pages/edit.html.erb",
-     "app/views/admin/pages/index.html.erb",
-     "app/views/admin/pages/new.html.erb",
+     "app/models/cms_page.rb",
+     "app/views/admin/cms_pages/_form.html.erb",
+     "app/views/admin/cms_pages/edit.html.erb",
+     "app/views/admin/cms_pages/index.html.erb",
+     "app/views/admin/cms_pages/new.html.erb",
      "app/views/static_content/show.html.erb",
      "config/locales/de-CH.yml",
      "config/locales/en-AU.yml",
@@ -66,10 +66,10 @@ Gem::Specification.new do |s|
   s.rubygems_version = %q{1.3.6}
   s.summary = %q{Extention to manage the static pages for your Spree shop.}
   s.test_files = [
-    "spec/models/page_spec.rb",
+    "spec/models/cms_page_spec.rb",
      "spec/spec_helper.rb",
      "spec/controllers/content_controller_spec.rb",
-     "spec/controllers/admin/pages_controller_spec.rb"
+     "spec/controllers/admin/cms_pages_controller_spec.rb"
   ]
 
   if s.respond_to? :specification_version then

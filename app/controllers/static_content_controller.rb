@@ -17,6 +17,8 @@ class StaticContentController < Spree::BaseController
         render :file => "#{RAILS_ROOT}/public/404.html", :layout => false, :status => 404
       end 
       @target = params[:target]
+      Rails.logger.debug @target
+      Rails.logger.debug @page
       render :template => 'static_content/show.js.erb', :content_type => 'text/javascript'
     end
     

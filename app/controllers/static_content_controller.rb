@@ -17,9 +17,10 @@ class StaticContentController < Spree::BaseController
     unless @page = CmsPage.visible.find_by_slug(path)
       render :file => "#{RAILS_ROOT}/public/404.html", :layout => false, :status => 404
     end
+    @target = params[:target]
     respond_to do |format|
       format.html #show.html.erb
-      format.js { @target = params[:target]}
+      format.js
     end
   end
   

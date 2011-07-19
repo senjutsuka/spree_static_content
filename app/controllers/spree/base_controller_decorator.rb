@@ -15,7 +15,9 @@ Spree::BaseController.class_eval do
     # But we realy don't want to query DB on each page we're sure doesn't exist!
     return if Rails.cache.fetch('page_not_exist/'+request.path)
 
+    Rails.logger.debug '*************render_cms_page_if_exists****************'
     Rails.logger.debug request.path
+    Rails.logger.debug '*************render_cms_page_if_exists****************'
     
     if request.path.match('\/*-asJS')
       path = request.path.chomp('-asJS') 

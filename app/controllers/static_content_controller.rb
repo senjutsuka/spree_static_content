@@ -11,6 +11,10 @@ class StaticContentController < Spree::BaseController
       request.path
     end
     
+    Rails.logger.debug '***************show******************'
+    Rails.logger.debug path
+    Rails.logger.debug '***************show******************'
+    
     if path.match('\/*-asJS')
       path = path.chomp('-asJS') 
       unless @page = CmsPage.visible.find_by_slug(path)

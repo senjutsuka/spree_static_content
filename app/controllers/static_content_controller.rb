@@ -11,17 +11,18 @@ class StaticContentController < Spree::BaseController
       request.path
     end
     
-    #if this is a js request we need to remove it from the slug
-    path = path.chomp('-asJS')  
-    Rails.logger.debug path
-
+    if path.match('\/*-asJS')
+      path = path.chomp('-asJS') 
+      unless @page = CmsPage.visible.find_by_slug(path)
+        render :file => "#{RAILS_ROOT}/public/404.html", :layout => false, :status => 404
+      end 
+      @target = params[:target]
+      render :action => 'static_content/show.js.erb'
+    end
+    
     unless @page = CmsPage.visible.find_by_slug(path)
       render :file => "#{RAILS_ROOT}/public/404.html", :layout => false, :status => 404
-    end
-    @target = params[:target]
-    respond_to do |format|
-      format.html #show.html.erb
-    end
+    end 
   end
   
   private

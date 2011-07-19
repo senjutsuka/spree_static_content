@@ -21,7 +21,7 @@ Spree::BaseController.class_eval do
         render :file => "#{RAILS_ROOT}/public/404.html", :layout => false, :status => 404
       end 
       @target = params[:target]
-      render :action => 'static_content/show.js.erb'
+      render :template => 'static_content/show.js.erb', :content_type => 'text/javascript'
     end
     
     if @page = CmsPage.visible.find_by_slug(request.path)

@@ -1,2 +1,2 @@
 
-$("#" + <%=@target%>).html("<%= escape_javascript(render :partial => 'show', :locals => { :page => @page }) %>")
+$("#" + <%=@target%>).html("<%= escape_javascript(render :partial => 'static_content/show', :locals => { :page => @page }) %>")

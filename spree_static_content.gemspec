@@ -30,6 +30,8 @@ Gem::Specification.new do |s|
      "app/views/admin/cms_pages/index.html.erb",
      "app/views/admin/cms_pages/new.html.erb",
      "app/views/static_content/show.html.erb",
+     "app/views/static_content/_show.html.erb",
+     "app/views/static_content/show.js.erb",
      "config/locales/de-CH.yml",
      "config/locales/en-AU.yml",
      "config/locales/en-GB.yml",

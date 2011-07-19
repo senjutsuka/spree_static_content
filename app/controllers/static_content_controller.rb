@@ -10,6 +10,9 @@ class StaticContentController < Spree::BaseController
     when nil
       request.path
     end
+    
+    #if this is a js request we need to remove it from the slug
+    path.chomp!(".js")  
 
     unless @page = CmsPage.visible.find_by_slug(path)
       render :file => "#{RAILS_ROOT}/public/404.html", :layout => false, :status => 404

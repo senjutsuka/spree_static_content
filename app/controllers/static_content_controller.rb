@@ -11,9 +11,9 @@ class StaticContentController < Spree::BaseController
       request.path
     end
     
-    Rails.logger.debug '***************show******************'
-    Rails.logger.debug path
-    Rails.logger.debug '***************show******************'
+    #Rails.logger.debug '***************show******************'
+    #Rails.logger.debug path
+    #Rails.logger.debug '***************show******************'
     
     if path.match('\/*-asJS')
       path = path.chomp('-asJS') 
@@ -21,8 +21,8 @@ class StaticContentController < Spree::BaseController
         render :file => "#{RAILS_ROOT}/public/404.html", :layout => false, :status => 404
       end 
       @target = params[:target]
-      Rails.logger.debug @target
-      Rails.logger.debug @page
+      #Rails.logger.debug @target
+      #Rails.logger.debug @page
       render :template => 'static_content/show.js.erb', :content_type => 'text/javascript'
     end
     

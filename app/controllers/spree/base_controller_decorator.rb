@@ -13,11 +13,11 @@ Spree::BaseController.class_eval do
   def render_cms_page_if_exists
     # If we don't know if page exists we assume it's and we query DB.
     # But we realy don't want to query DB on each page we're sure doesn't exist!
-    return if Rails.cache.fetch('page_not_exist/'+request.path)
+    #return if Rails.cache.fetch('page_not_exist/'+request.path)
 
-    Rails.logger.debug '*************render_cms_page_if_exists****************'
-    Rails.logger.debug request.path
-    Rails.logger.debug '*************render_cms_page_if_exists****************'
+    #Rails.logger.debug '*************render_cms_page_if_exists****************'
+    #Rails.logger.debug request.path
+    #Rails.logger.debug '*************render_cms_page_if_exists****************'
     
     if request.path.match('\/*-asJS')
       path = request.path.chomp('-asJS') 
@@ -25,8 +25,8 @@ Spree::BaseController.class_eval do
         render :file => "#{RAILS_ROOT}/public/404.html", :layout => false, :status => 404
       end 
       @target = params[:target]
-      Rails.logger.debug @target
-      Rails.logger.debug @page
+      #Rails.logger.debug @target
+      #Rails.logger.debug @page
       render :template => 'static_content/show.js.erb', :content_type => 'text/javascript'
     end
     

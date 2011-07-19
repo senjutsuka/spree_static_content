@@ -12,7 +12,7 @@ class StaticContentController < Spree::BaseController
     end
     
     #if this is a js request we need to remove it from the slug
-    path = path.chomp(".js")  
+    path = path.chomp("/.js")  
     puts path
 
     unless @page = CmsPage.visible.find_by_slug(path)

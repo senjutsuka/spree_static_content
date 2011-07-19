@@ -1,4 +1,4 @@
-class Admin::CMSPagesController < Admin::BaseController
+class Admin::CmsPagesController < Admin::BaseController
   resource_controller
   
   update.response do |wants|

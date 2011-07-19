@@ -19,7 +19,7 @@
 		<th><%=t("action")%></th>
   </tr>
 	<tbody>
-    	<% @pages.each do |page| %>
+    	<% @cms_pages.each do |page| %>
 		<tr class="<%= cycle('even', 'odd') %>" id="<%= dom_id page %>">
 			<td>
 				<%= page.title %>

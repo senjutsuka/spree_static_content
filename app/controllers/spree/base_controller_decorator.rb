@@ -14,8 +14,9 @@ Spree::BaseController.class_eval do
     # If we don't know if page exists we assume it's and we query DB.
     # But we realy don't want to query DB on each page we're sure doesn't exist!
     return if Rails.cache.fetch('page_not_exist/'+request.path)
-
-    if @page = CmsPage.visible.find_by_slug(request.path.chomp('.js'))
+    path = request.path.chomp('.js')
+    Rails.logger.debug path
+    if @page = CmsPage.visible.find_by_slug(path)
       if @page.layout && !@page.layout.empty?
         render :template => 'static_content/show', :layout => @page.layout
       else

@@ -53,9 +53,9 @@ Gem::Specification.new do |s|
      "lib/generators/templates/db/migrate/20100323085528_add_show_in_sidebar_option_to_pages.rb",
      "lib/spree_static_content.rb",
      "lib/spree_static_content_hooks.rb",
-     "spec/controllers/admin/pages_controller_spec.rb",
+     "spec/controllers/admin/cms_pages_controller_spec.rb",
      "spec/controllers/content_controller_spec.rb",
-     "spec/models/page_spec.rb",
+     "spec/models/cms_page_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb",
      "spree_static_content.gemspec"

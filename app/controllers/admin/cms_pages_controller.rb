@@ -6,8 +6,8 @@ class Admin::CmsPagesController < Admin::BaseController
   end
   
   update.after do
-    expire_page :controller => '/static_content', :action => 'show', :path => @page.slug
-    Rails.cache.delete('page_not_exist/'+@page.slug)
+    expire_page :controller => '/static_content', :action => 'show', :path => @cms_page.slug
+    #Rails.cache.delete('page_not_exist/'+@cms_page.slug)
   end
   
   create.response do |wants|
@@ -15,7 +15,7 @@ class Admin::CmsPagesController < Admin::BaseController
   end
 
   create.after do
-    Rails.cache.delete('page_not_exist/'+@page.slug)
+    #Rails.cache.delete('page_not_exist/'+@cms_page.slug)
   end
 
 end

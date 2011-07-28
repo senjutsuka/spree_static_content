@@ -32,3 +32,15 @@ extension to change the layout of the static pages.
 1. Run `rails g spree_static_content:install`
 1. Run `rake db:migrate`
 1. Run `rake spree_editor:install`
+
+
+Inline (Partial) Usage:
+
+<%= raw CmsPage.partial(@cms_partials, '/Help/Book/Start') %>
+
+or
+
+<p id="help_start_book"></p>
+<script>$.ajax({url: '/Help/Book/Start-asJS?target=help_start_book'});</script>
+
+

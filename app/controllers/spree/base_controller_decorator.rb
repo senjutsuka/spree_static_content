@@ -8,8 +8,9 @@ Spree::BaseController.class_eval do
   before_filter :load_cms_partials
 
   def load_cms_partials
-	 @cms_partials = Rails.cache.fetch('cms_partials', :expires_in => 24.hours) { CmsPage.cms_partials }
+	 @cms_partials = Rails.cache.fetch('cms_partials', :expires_in => 24.hours) { CmsPage.cms_partials.all }
   end
+  
   
   # Checks if page is not beeing overriden by static one that starts with /
   #

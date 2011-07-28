@@ -21,6 +21,10 @@ class CmsPage < ActiveRecord::Base
   def link
     foreign_link.blank? ? slug_link : foreign_link
   end
+  
+  def self.partial(collection, slug)
+    collection.find{|page| page.slug = slug}.body
+  end
 
 private
 

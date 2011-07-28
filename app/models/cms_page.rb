@@ -8,6 +8,7 @@ class CmsPage < ActiveRecord::Base
   scope :footer_links, where(["show_in_footer = ?", true])
   scope :sidebar_links, where(["show_in_sidebar = ?", true])
   scope :visible, where(:visible => true)
+  scope :cms_partials, where(["visible = ? AND available_as_partial = ?", true, true])
   
   before_save :update_positions_and_slug
 

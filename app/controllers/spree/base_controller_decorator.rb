@@ -5,7 +5,12 @@ Spree::BaseController.class_eval do
   # Use before_filter instead of prepend_before_filter to ensure that
   # ApplicationController filters that the view may require are run.
   before_filter :render_cms_page_if_exists
+  before_filter :load_cms_partials
 
+  def load_cms_partials
+	 @cms_partials = Rails.cache.fetch('cms_partials', :expires_in => 24.hours) { CmsPage.cms_partials }
+  end
+  
   # Checks if page is not beeing overriden by static one that starts with /
   #
   # Using request.path allows us to override dynamic cms_pages including

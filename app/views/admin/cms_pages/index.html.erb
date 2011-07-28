@@ -16,6 +16,7 @@
 		<th><%=t("ext_static_content_title")%></th>
 		<th><%=t("ext_static_content_link")%></th>
 		<th><%=t("ext_static_content_visible")%></th>
+		<th><%=t("ext_static_content_available_as_partial")%></th>
 		<th><%=t("action")%></th>
   </tr>
 	<tbody>
@@ -29,6 +30,9 @@
 			</td>
 			<td>
 			  <%= page.visible %>
+			</td>
+			<td>
+			  <%= page.available_as_partial %>
 			</td>
 			<td>
         <%= link_to_edit page %> &nbsp;

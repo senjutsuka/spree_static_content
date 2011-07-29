@@ -23,7 +23,11 @@ class CmsPage < ActiveRecord::Base
   end
   
   def self.partial(collection, slug)
-    collection.find{|page| page.slug = slug}.body
+	retval = collection.find{|page| page.slug == slug}
+	if retval == nil
+		return
+	end
+	return retval.body
   end
 
 private
